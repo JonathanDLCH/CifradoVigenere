@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado de Vigenère || JonathanDLCH</title>
+    <link rel="shortcut icon" href="resources/BUAPLOGO.png">
+    <link rel="stylesheet" href="resources/styles.css">
+</head>
+<body>
+    <header class="flex">
+        <h1>Cifrado de Vigenère</h1>
+    </header>
+    <main>
+        <section>
+            <!--img src="resources/background.jpg" alt="" class="gladiador"-->
+            <form action="">
+                <label for="">Ingrese el texto</label>
+                <input type="tex" id="mensaje">
+                <label for="">Clave</label>
+                <input type="text" id="clave">
+                <button type="button" onclick="cifrarVigenere('mensaje','clave')">Cifrar</button>
+                <button type="button" onclick="descifrarVigenere('mensaje','clave')">Descifrar</button>
+                <p id="resultado">Resultado:</p>
+            </form>
+        </section>
+    </main>
+    <footer class="flex">
+        <div>
+            <h3>BUAP - FCC</h3>
+            <h4>Jonathan De La Cruz Huerta</h4>
+            <h5>201731754</h5>
+            <h4>Intercomunicación y Seguridad en Redes</h4>
+        </div>
+        <div>
+            <h3>Funcionamiento</h3>
+            <p>Ingrese una cadena que quiera cifrar, ingrese su clave y pulse el boton de cifrar, <br> 
+                con esto el algoritmo de cifrado realizara un corrimiento de acuerdo a la clave,<br>
+                Se proporciona el mensaje y la clave al receptor, este lo ingresa y da click en el boton de descifrar.
+            </p>
+        </div>
+        <div><img src="resources/BUAPLOGO.png" alt="logo buap" width="100px" height="100px"></div>
+    </footer>
+    <script src="resources/algoritmo.js"></script>
+</body>
+</html>
