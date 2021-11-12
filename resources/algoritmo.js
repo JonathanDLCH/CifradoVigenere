@@ -1,5 +1,5 @@
 //Definimos nuestro alfabeto con el que trabajaremos (no ASCII por la ñ)
-const abcMin="abcdefghijklmnñopqrstuvwxyz";
+const abcMin="abcdefghijklmnñopqrstuvwxyzáéíóú,?¿!¡ *-+[]{}._0123456789";
 const abcAcn="áéíóú";
 const sizeabc = abcMin.length;
 
@@ -23,7 +23,7 @@ function cifrarVigenere(idMensaje,idClave){
         var claveNum = castNum(clave);
 
         for (var i=0; i<mensajeNum.length; i++){
-            letraencriptada.push((mensajeNum[i]+claveNum[i])%27);
+            letraencriptada.push((mensajeNum[i]+claveNum[i])%57);
             console.log("letra encriptada: "+letraencriptada[i]);
             msgEncriptado+=abcMin.charAt(letraencriptada[i]);
         }
@@ -44,7 +44,7 @@ function cifrarVigenere(idMensaje,idClave){
         var claveNum = castNum(clave);
 
         for (var i=0; i<mensajeNum.length; i++){
-            letraencriptada.push((mensajeNum[i]+claveNum[i])%27);
+            letraencriptada.push((mensajeNum[i]+claveNum[i])%57);
             console.log("letra encriptada: "+letraencriptada[i]);
             msgEncriptado+=abcMin.charAt(letraencriptada[i]);
         }
@@ -77,11 +77,11 @@ function descifrarVigenere(idMensaje,idClave){
         for (var i=0; i<mensajeNum.length; i++){
 
             if(mensajeNum[i]-claveNum[i] >=0){
-                letraencriptada.push((mensajeNum[i]-claveNum[i])%27);
+                letraencriptada.push((mensajeNum[i]-claveNum[i])%57);
                 console.log("letra encriptada: "+letraencriptada[i]);
                 msgEncriptado+=abcMin.charAt(letraencriptada[i]);
             }else{
-                letraencriptada.push((mensajeNum[i]-claveNum[i]+27)%27);
+                letraencriptada.push((mensajeNum[i]-claveNum[i]+57)%57);
                 console.log("letra encriptada: "+letraencriptada[i]);
                 msgEncriptado+=abcMin.charAt(letraencriptada[i]);
             }
@@ -105,11 +105,11 @@ function descifrarVigenere(idMensaje,idClave){
         for (var i=0; i<mensajeNum.length; i++){
             
             if(mensajeNum[i]-claveNum[i] >=0){
-                letraencriptada.push((mensajeNum[i]-claveNum[i])%27);
+                letraencriptada.push((mensajeNum[i]-claveNum[i])%57);
                 console.log("letra encriptada: "+letraencriptada[i]);
                 msgEncriptado+=abcMin.charAt(letraencriptada[i]);
             }else{
-                letraencriptada.push((mensajeNum[i]-claveNum[i]+27)%27);
+                letraencriptada.push((mensajeNum[i]-claveNum[i]+57)%57);
                 console.log("letra encriptada: "+letraencriptada[i]);
                 msgEncriptado+=abcMin.charAt(letraencriptada[i]);
             }
@@ -131,6 +131,7 @@ function castNum(palabra){
             }else{
                 if(palabra[j]){
 
+
                 }else{
                     console.log("No es una letra del abecedario");
                 }
@@ -139,4 +140,10 @@ function castNum(palabra){
     }
     console.log(numericStg);
     return numericStg;
+}
+
+function limpiar(){
+    document.getElementById("clave").value="";
+    document.getElementById("mensaje").value="";
+    document.getElementById("resultado").innerText ="Resultado: ";
 }
